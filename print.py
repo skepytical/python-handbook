@@ -31,5 +31,5 @@ def json_open(path):
 def items_formatter(nested_list):
   return f'{', '.join(str(value) for key in nested_list for i in nested_list[key] for value in i)}'
 
-
-main()
+if __name__ == '__main__':
+  main()

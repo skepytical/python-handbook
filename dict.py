@@ -3,6 +3,19 @@ def main():
     'name': 'Joao silva'
   }
 
+  celsius_measures = {
+  '1': '1',
+  '2': '50',
+  '3': '100'  
+}
+  
+  celsius_values = [float(celsius_value) for celsius_value in celsius_measures.values()]
+  kelvin_list = celsius_to_kelvin(celsius_values)
+  
+  for c, k in zip(celsius_measures.values(), kelvin_list):
+    print(f'{c} C is {k} K')
+  print()  
+
   user['email'] = 'example@mail.com'
   user.update({'id': 1, 'zip': 27587})
 
@@ -33,5 +46,12 @@ def format_user(user):
   for key in user.keys():
     formatted_user += f'{key.capitalize()}: {user[key]}\n'
   return formatted_user
+
+def celsius_to_kelvin(celsius_list:list):
+  kelvin_list = [(celsius + 273.15) for celsius in celsius_list]
+  return kelvin_list
+
+
+
 
 main()
