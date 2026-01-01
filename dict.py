@@ -51,7 +51,4 @@ def celsius_to_kelvin(celsius_list:list):
   kelvin_list = [(celsius + 273.15) for celsius in celsius_list]
   return kelvin_list
 
-
-
-
 main()
