@@ -12,13 +12,13 @@ def main():
   n2 = 2
   print(n1, n2)
 
-  # Print a new line
   print()
   
   decimals = json_open('jsons/decimals.json')
 
-  # Print a value in json
-  print(items_formatter(decimals))
+  for nest in decimals.values():
+    for d in nest:
+      print(*d)
 
 def hello(name='world'):
   # print('Hello,', name, end='\n', sep=' ')
@@ -27,9 +27,6 @@ def hello(name='world'):
 def json_open(path):
   with open(path, 'r') as file:
     return json.load(file)
-
-def items_formatter(nested_list):
-  return f'{', '.join(str(value) for key in nested_list for i in nested_list[key] for value in i)}'
 
 if __name__ == '__main__':
   main()
